@@ -1,1 +1,21 @@
-<p>conference-list works!</p>
+<h1>Liste des conférences</h1>
+<input type="text" [(ngModel)]="searchTerm" > {{searchTerm}}
+<div class="container">
+  @for (conf of filt(); track conf.id) {
+    @if (conf.nbPlaces > 0) {
+      <app-card [conf]="conf"></app-card>
+    } @else {
+      <p>Aucune place disponible pour {{conf.titre | uppercase}}</p>
+    }
+  } @empty {
+    <h2>Aucune conférence disponible</h2>
+  }
+</div>
+<div>
+    <h2>Conférences favorites</h2>
+    <ul>
+        @for (conf of favoriteConferences; track conf.id) {
+            <li>{{conf.titre}}</li>
+        }
+    </ul>
+</div>

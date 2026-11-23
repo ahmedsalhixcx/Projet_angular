@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ConferenceList } from '../conference-list/conference-list';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule,ConferenceList],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
